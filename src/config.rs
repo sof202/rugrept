@@ -1,6 +1,9 @@
+use std::env;
+
 pub struct Config {
     pub search_query: String,
     pub file_path: String,
+    pub ignore_case: bool,
 }
 
 impl Config {
@@ -13,9 +16,12 @@ impl Config {
         let search_query = command_line_arguments[1].clone();
         let file_path = command_line_arguments[2].clone();
 
+        let ignore_case = env::var("RUGREPT_IGNORE_CASE").is_ok();
+
         Ok(Config {
             search_query,
             file_path,
+            ignore_case,
         })
     }
 }
