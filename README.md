@@ -2,7 +2,7 @@
 
 A `grep` CLI clone written in Rust. 
 
-Does is do everything that `grep` does?
+Does this do everything that `grep` does?
 
 Hell no.
 
